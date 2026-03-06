@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Authorization — Corgi Dad Jokes</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F415;</text></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: #7eb8da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      background: #1a1a1a;
+      border-bottom: 1px solid #2a2a2a;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    nav .brand { font-weight: 700; font-size: 1.1rem; color: #fff; }
+    nav .links { display: flex; gap: 1.25rem; font-size: 0.9rem; }
+    main {
+      flex: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .checkmark {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 1.75rem; color: #4ade80; margin-bottom: 1rem; }
+    .instructions {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .copy-btn {
+      background: #7eb8da;
+      color: #0f0f0f;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover { background: #9ccce8; }
+    .copy-btn.copied { background: #4ade80; }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #666;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #666; }
+    footer .legal { margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="brand">Corgi Dad Jokes</span>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="tos.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="checkmark">&#10003;</div>
+    <h1>TikTok Authorization Successful!</h1>
+    <p class="instructions">
+      Please copy the full URL from your browser's address bar and paste it back into your local terminal to complete the authentication process.
+    </p>
+    <button class="copy-btn" onclick="copyURL(this)">Copy URL to Clipboard</button>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Corgi Dad Jokes. All rights reserved.</div>
+    <div class="legal">
+      <a href="tos.html">Terms of Service</a> &middot; <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    function copyURL(btn) {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = 'Copy URL to Clipboard';
+          btn.classList.remove('copied');
+        }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>
